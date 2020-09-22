@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>states</title>
+</head>
+<body>
+<!--<script type="text/javascript" src="./js/react.development.js"></script>-->
+<!-- 加载 React。-->
+<!-- 注意: 部署时，将 "development.js" 替换为 "production.min.js"。-->
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<script type="text/babel">
+    // 1  定义组件
+    class Like extends React.Component {
+        constructor (props){
+            super(props)
+            //    初始化状态
+            this.state = {
+                isLikeMe: true
+            }
+        }
+
+        handClick(){
+
+        }
+
+        render(){
+            //读取状态
+            const  {isLikeMe} = this.state
+            return <h2 onClick = {this.handClick}> {isLikeMe ? '没有打开':'打开了'} </h2>
+        }
+    }
+    //  2 渲染组件标签
+    ReactDOM.render(<Like />, document.getElementById('example'));
+
+</script>
+
+
+
+</body>
+</html>
